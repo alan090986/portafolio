@@ -3,9 +3,20 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Portafolio profesional de Alan Mario Villegas Reyes, desarrollador full stack especializado en PHP, Laravel, React y DevOps. Disponible para trabajos remotos.">
+  <meta property="og:title" content="Alan Mario Villegas Reyes | Desarrollador Full Stack">
+  <meta property="og:description" content="Portafolio profesional de Alan Mario Villegas Reyes, desarrollador full stack con experiencia en Laravel, React y DevOps.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://alan090986.github.io/portafolio">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Alan Mario Villegas Reyes | Desarrollador Full Stack">
+  <meta name="twitter:description" content="Portafolio profesional de Alan Mario Villegas Reyes.">
+  <link rel="manifest" href="manifest.json">
+  <link rel="icon" type="image/png" href="favicon.png">
   <title>Alan Mario Villegas Reyes | Desarrollador Full Stack</title>
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="CSS/estilos.css">
 </head>
 <body class="bg-gray-100 text-gray-800 dark:bg-gray-900 dark:text-gray-200 font-sans">
   <header class="bg-white dark:bg-gray-800 shadow p-6 text-center animate-fade-in">
@@ -99,31 +110,6 @@
     © 2025 Alan Mario Villegas Reyes. Todos los derechos reservados.
   </footer>
 
-  <script>
-    function mostrarConfirmacion() {
-      document.getElementById('confirmacion').classList.remove('hidden');
-      setTimeout(() => {
-        document.getElementById('confirmacion').classList.add('hidden');
-      }, 5000);
-      return true;
-    }
-  </script>
-
-  <style>
-    @keyframes fade-in {
-      from { opacity: 0; }
-      to { opacity: 1; }
-    }
-    @keyframes fade-in-up {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-    .animate-fade-in {
-      animation: fade-in 1s ease-out;
-    }
-    .animate-fade-in-up {
-      animation: fade-in-up 0.8s ease-out;
-    }
-  </style>
+  <script src="js/script.js"></script>
 </body>
 </html>
