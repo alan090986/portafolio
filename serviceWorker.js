@@ -2,8 +2,8 @@ const CACHE_NAME = 'alan-portafolio-v1';
 const URLS_TO_CACHE = [
   '/',
   '/index.html',
-  '/CSS/estilos.css',
-  '/js/script.js',
+  'CSS/estilos.css',
+  'js/script.js',
   '/favicon.png'
 ];
 
