@@ -1,11 +1,13 @@
 {
     "name": "Portafolio de Alan Mario Villegas Reyes",
-    "short_name": "Portafolio Alan",
+    "short_name": "Alan Villegas",
+    "description": "Portafolio profesional de Alan Mario Villegas Reyes, desarrollador full stack especializado en PHP, Laravel, JavaScript y DevOps.",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#ffffff",
     "theme_color": "#1f2937",
-    "description": "Portafolio profesional de Alan Mario Villegas Reyes, desarrollador full stack.",
+    "orientation": "portrait",
+    "lang": "es-MX",
     "icons": [
       {
         "src": "favicon.png",
@@ -17,7 +19,7 @@
         "sizes": "512x512",
         "type": "image/png"
       }
-    ],
-    "lang": "es"
+    ]
   }
+  
   
