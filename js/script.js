@@ -54,3 +54,40 @@ if ('serviceWorker' in navigator) {
     console.log('PWA fue instalada');
     installBtn.style.display = 'none';
   });
+
+   // Formspree feedback visual
+   const form = document.getElementById('contact-form');
+   const status = document.getElementById('form-status');
+
+   form.addEventListener('submit', async (e) => {
+     e.preventDefault();
+     const data = new FormData(form);
+     const action = form.action;
+
+     try {
+       const response = await fetch(action, {
+         method: 'POST',
+         body: data,
+         headers: {
+           'Accept': 'application/json'
+         }
+       });
+
+       if (response.ok) {
+         status.textContent = 'Mensaje enviado correctamente. ¡Gracias!';
+         status.className = 'text-green-600 text-center';
+         form.reset();
+       } else {
+         const result = await response.json();
+         if (result.errors) {
+           status.textContent = result.errors.map(error => error.message).join(', ');
+         } else {
+           status.textContent = 'Ocurrió un error al enviar el mensaje.';
+         }
+         status.className = 'text-red-600 text-center';
+       }
+     } catch (error) {
+       status.textContent = 'No se pudo enviar el mensaje. Intenta más tarde.';
+       status.className = 'text-red-600 text-center';
+     }
+   });
