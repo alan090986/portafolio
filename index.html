@@ -11,20 +11,25 @@
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="Alan Mario Villegas Reyes | Desarrollador Full Stack">
   <meta name="twitter:description" content="Portafolio profesional de Alan Mario Villegas Reyes.">
-  <link rel="icon" type="image/png" href="favicon.png">
   <link rel="manifest" href="manifest.json">
+  <link rel="icon" type="image/png" href="favicon.png">
+  <!-- Icono específico para iOS -->
+  <link rel="apple-touch-icon" href="icons/icon-192x192.png">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="Portafolio de Alan">
   <title>Alan Mario Villegas Reyes | Desarrollador Full Stack</title>
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-  <link rel="stylesheet" href="CSS/estilos.css">
-   <!-- Google Analytics -->
-   <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
-   <script>
-     window.dataLayer = window.dataLayer || [];
-     function gtag() { dataLayer.push(arguments); }
-     gtag('js', new Date());
-     gtag('config', 'G-XXXXXXXXXX');
-   </script>
+  <link rel="stylesheet" href="estilos.css">
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-XXXXXXXXXX');
+  </script>
 </head>
 <body class="bg-gray-100 text-gray-800 dark:bg-gray-900 dark:text-gray-200 font-sans">
   <header class="bg-white dark:bg-gray-800 shadow p-6 text-center animate-fade-in">
@@ -114,9 +119,12 @@
     </div>
   </section>
   <div class="fixed bottom-4 right-4 z-50">
-    <button id="installButton" class="bg-blue-600 text-white px-4 py-2 rounded-full shadow-md hover:bg-blue-700 transition">
+    <button id="installButton" class="bg-blue-600 text-white px-4 py-2 rounded-full shadow-md hover:bg-blue-700 transition hidden">
       Instalar App
     </button>
+    <div id="iosInstructions" class="bg-yellow-100 text-yellow-800 px-4 py-2 rounded-lg shadow-md mt-2 hidden text-sm">
+      En iPhone, pulsa <strong>Compartir</strong> y selecciona <strong>"Agregar a pantalla de inicio"</strong>
+    </div>
   </div>
 
   <footer class="text-center text-sm text-gray-500 dark:text-gray-400 mt-8 py-4 border-t border-gray-300 dark:border-gray-700 animate-fade-in">
