@@ -99,16 +99,29 @@
 
   <section id="contacto" class="p-6 mt-8 max-w-5xl mx-auto animate-fade-in-up">
     <h2 class="text-2xl font-bold mb-4">Contacto</h2>
-    <form action="https://formsubmit.co/alan.villegas@email.com" method="POST" class="space-y-4" onsubmit="return mostrarConfirmacion()">
-      <input type="hidden" name="_next" value="https://alan090986.github.io/portafolio/agradecimiento.html">
-      <input type="text" name="name" placeholder="Nombre" autocomplete="Nombre" required class="w-full p-2 rounded bg-gray-200 dark:bg-gray-700 border-none">
-      <input type="email" name="email" placeholder="Correo electrónico" autocomplete="email" required class="w-full p-2 rounded bg-gray-200 dark:bg-gray-700 border-none">
-      <textarea name="message" placeholder="Escribe tu mensaje..." autocomplete="mensaje" rows="4" required class="w-full p-2 rounded bg-gray-200 dark:bg-gray-700 border-none"></textarea>
-      <button type="submit" class="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 transition">Enviar</button>
-    </form>
+    <section class="max-w-xl mx-auto p-6 bg-white dark:bg-gray-800 rounded-lg shadow-md my-10">
+      <h2 class="text-2xl font-bold mb-4 text-center">Contáctame</h2>
+      <form action="https://formspree.io/f/mnqeyjgr" method="POST" class="space-y-4">
+        <div>
+          <label for="name" class="block font-semibold">Nombre</label>
+          <input type="text" id="name" name="name" required autocomplete="name" class="w-full mt-1 p-2 border border-gray-300 rounded-md dark:bg-gray-700 dark:border-gray-600">
+        </div>
+        <div>
+          <label for="email" class="block font-semibold">Correo electrónico</label>
+          <input type="email" id="email" name="email" required autocomplete="email" class="w-full mt-1 p-2 border border-gray-300 rounded-md dark:bg-gray-700 dark:border-gray-600">
+        </div>
+        <div>
+          <label for="message" class="block font-semibold">Mensaje</label>
+          <textarea id="message" name="message" rows="5" required autocomplete="off" class="w-full mt-1 p-2 border border-gray-300 rounded-md dark:bg-gray-700 dark:border-gray-600"></textarea>
+        </div>
+        <div class="text-center">
+          <button type="submit" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition">Enviar</button>
+        </div>
+      </form>
+    </section>
     <div id="confirmacion" class="hidden mt-4 text-green-600 font-semibold">¡Mensaje enviado con éxito!</div>
     <div class="mt-6">
-      <p><i class="fas fa-envelope mr-2"></i> himdady@hotmail.com</p>
+      <p><i class="fas fa-envelope mr-2"></i>devalanvi@proton.me</p>
       <p class="mt-2">
         <i class="fab fa-github mr-2"></i>
         <a href="https://github.com/alan090986" class="text-blue-600 dark:text-blue-400 underline">GitHub</a>
