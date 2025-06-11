@@ -19,29 +19,38 @@ if ('serviceWorker' in navigator) {
   
 
   let deferredPrompt;
-    const installBtn = document.getElementById('installButton');
+  const installBtn = document.getElementById('installButton');
+  const iosInstructions = document.getElementById('iosInstructions');
 
-    window.addEventListener('beforeinstallprompt', (e) => {
-      e.preventDefault();
-      deferredPrompt = e;
-      installBtn.style.display = 'block';
-    });
+  const isIOS = /iphone|ipad|ipod/i.test(navigator.userAgent);
+  const isInStandaloneMode = ('standalone' in window.navigator) && window.navigator.standalone;
 
-    installBtn.addEventListener('click', () => {
-      if (deferredPrompt) {
-        deferredPrompt.prompt();
-        deferredPrompt.userChoice.then((choiceResult) => {
-          if (choiceResult.outcome === 'accepted') {
-            console.log('Usuario aceptó instalar');
-          } else {
-            console.log('Usuario rechazó');
-          }
-          deferredPrompt = null;
-        });
-      }
-    });
+  if (isIOS && !isInStandaloneMode) {
+    iosInstructions.classList.remove('hidden');
+  }
 
-    window.addEventListener('appinstalled', () => {
-      console.log('PWA fue instalada');
-      installBtn.style.display = 'none';
-    });
+  window.addEventListener('beforeinstallprompt', (e) => {
+    if (isIOS) return; // iOS no soporta beforeinstallprompt
+    e.preventDefault();
+    deferredPrompt = e;
+    installBtn.style.display = 'block';
+  });
+
+  installBtn.addEventListener('click', () => {
+    if (deferredPrompt) {
+      deferredPrompt.prompt();
+      deferredPrompt.userChoice.then((choiceResult) => {
+        if (choiceResult.outcome === 'accepted') {
+          console.log('Usuario aceptó instalar');
+        } else {
+          console.log('Usuario rechazó');
+        }
+        deferredPrompt = null;
+      });
+    }
+  });
+
+  window.addEventListener('appinstalled', () => {
+    console.log('PWA fue instalada');
+    installBtn.style.display = 'none';
+  });
