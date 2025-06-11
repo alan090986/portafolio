@@ -56,38 +56,35 @@ if ('serviceWorker' in navigator) {
   });
 
    // Formspree feedback visual
-   const form = document.getElementById('contact-form');
-   const status = document.getElementById('form-status');
-
    form.addEventListener('submit', async (e) => {
-     e.preventDefault();
-     const data = new FormData(form);
-     const action = form.action;
-
-     try {
-       const response = await fetch(action, {
-         method: 'POST',
-         body: data,
-         headers: {
-           'Accept': 'application/json'
-         }
-       });
-
-       if (response.ok) {
-         status.textContent = 'Mensaje enviado correctamente. ¡Gracias!';
-         status.className = 'text-green-600 text-center';
-         form.reset();
-       } else {
-         const result = await response.json();
-         if (result.errors) {
-           status.textContent = result.errors.map(error => error.message).join(', ');
-         } else {
-           status.textContent = 'Ocurrió un error al enviar el mensaje.';
-         }
-         status.className = 'text-red-600 text-center';
-       }
-     } catch (error) {
-       status.textContent = 'No se pudo enviar el mensaje. Intenta más tarde.';
-       status.className = 'text-red-600 text-center';
-     }
-   });
+    e.preventDefault();
+    const data = new FormData(form);
+    const action = form.action;
+  
+    try {
+      const response = await fetch(action, {
+        method: 'POST',
+        body: data,
+        headers: {
+          'Accept': 'application/json'
+        }
+      });
+  
+      if (response.ok) {
+        status.innerHTML = `<i class="fas fa-check-circle mr-2 text-green-600"></i>Mensaje enviado correctamente. ¡Gracias!`;
+        status.className = 'text-green-600 text-center mt-4 flex items-center justify-center';
+        form.reset();
+      } else {
+        const result = await response.json();
+        let errorMsg = 'Ocurrió un error al enviar el mensaje.';
+        if (result.errors) {
+          errorMsg = result.errors.map(error => error.message).join(', ');
+        }
+        status.innerHTML = `<i class="fas fa-times-circle mr-2 text-red-600"></i>${errorMsg}`;
+        status.className = 'text-red-600 text-center mt-4 flex items-center justify-center';
+      }
+    } catch (error) {
+      status.innerHTML = `<i class="fas fa-exclamation-circle mr-2 text-red-600"></i>No se pudo enviar el mensaje. Intenta más tarde.`;
+      status.className = 'text-red-600 text-center mt-4 flex items-center justify-center';
+    }
+  })
