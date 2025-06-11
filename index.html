@@ -88,9 +88,9 @@
     <h2 class="text-2xl font-bold mb-4">Contacto</h2>
     <form action="https://formsubmit.co/alan.villegas@email.com" method="POST" class="space-y-4" onsubmit="return mostrarConfirmacion()">
       <input type="hidden" name="_next" value="https://alan090986.github.io/portafolio/agradecimiento.html">
-      <input type="text" name="name" placeholder="Nombre" required class="w-full p-2 rounded bg-gray-200 dark:bg-gray-700 border-none">
-      <input type="email" name="email" placeholder="Correo electrónico" required class="w-full p-2 rounded bg-gray-200 dark:bg-gray-700 border-none">
-      <textarea name="message" placeholder="Escribe tu mensaje..." rows="4" required class="w-full p-2 rounded bg-gray-200 dark:bg-gray-700 border-none"></textarea>
+      <input type="text" name="name" placeholder="Nombre" autocomplete="Nombre" required class="w-full p-2 rounded bg-gray-200 dark:bg-gray-700 border-none">
+      <input type="email" name="email" placeholder="Correo electrónico" autocomplete="email" required class="w-full p-2 rounded bg-gray-200 dark:bg-gray-700 border-none">
+      <textarea name="message" placeholder="Escribe tu mensaje..." autocomplete="mensaje" rows="4" required class="w-full p-2 rounded bg-gray-200 dark:bg-gray-700 border-none"></textarea>
       <button type="submit" class="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 transition">Enviar</button>
     </form>
     <div id="confirmacion" class="hidden mt-4 text-green-600 font-semibold">¡Mensaje enviado con éxito!</div>
